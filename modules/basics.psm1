@@ -3,5 +3,6 @@ Function Test-Win11Installation {
 }
 
 Function Restart-Explorer {
+    Write-Output "[i] Restarting Explorer ..."
     Stop-Process -Name explorer -Force
 }

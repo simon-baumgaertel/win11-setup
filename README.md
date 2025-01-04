@@ -35,6 +35,7 @@ Feel free to explore, contribute, or adapt the scripts to your personal needs!
 * sets explorer settings
     * show hidden files
     * show file extensions
+    * restore classic context menu
 
 
 ## Credits

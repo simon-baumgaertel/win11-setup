@@ -8,7 +8,10 @@ Function Update-WinGet {
     }
 }
 
+Function Install-WinGetPackages {
+    Write-Output "[+] Installing # of packages"
+}
+
 Function Install-WSL {
-    Write-Output "[+] Installing WSL (Ubuntu)"
     wsl --install
 }
