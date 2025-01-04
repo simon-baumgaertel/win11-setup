@@ -4,7 +4,7 @@ Function Update-WinGet {
     try {
         winget --version
     } catch {
-        Write-Output "[-] Having trouble to verify WinGet presence ..."
+    Write-Output "[?] Having trouble to find WinGet ..."
     }
 }
 
@@ -16,9 +16,7 @@ Function Install-WinGetPackages {
 
         foreach ($package in $packages) {
             try {
-		    $package
-                winget install --id $package.id -e -s $package.source --accept-package-agreements --accept-source-agreements 
-
+		        winget install --id $package.id -e -s $package.source --accept-package-agreements --accept-source-agreements
             } catch {
                 Write-Output "[-] Error installing $package - please verify package id"
             }
@@ -28,4 +26,20 @@ Function Install-WinGetPackages {
 
 Function Install-WSL {
     wsl --install
+}
+
+Function Remove-Bloatware {
+    $bloatware = ".\config\bloatware_apps.csv"
+    if(Test-Path -Path $bloatware){
+        $apps = Import-Csv -Path $bloatware
+        Write-Output "[-] Removing $($apps.count) bloatware apps"
+
+        foreach ($app in $apps) {
+            try {
+                Get-AppxPackage -AllUsers $app.id | Remove-AppxPackage -AllUsers -Verbose -ErrorAction Continue
+            } catch {
+                Write-Output "[?] An error occured while removing $app.id"
+            }
+        }
+    }
 }

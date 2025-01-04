@@ -1,3 +1,5 @@
+#Requires -RunAsAdministrator
+
 Start-Transcript -Path ".\Win11-Setup.log" -Force
 
 Write-Output "[i] Importing modules ..."

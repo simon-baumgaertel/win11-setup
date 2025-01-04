@@ -16,6 +16,11 @@ Function Set-TaskbarSettings {
 
     # Removes search from the Taskbar
     Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search -Name "SearchboxTaskbarMode" -Type 'Dword' -Value "0" -Force
+
+    # Unpin the Microsoft Store
+    $appname = "Microsoft Store" 
+    ((New-Object -Com Shell.Application).NameSpace('shell:::{4234d49b-0245-4df3-b780-3893943456e1}').Items() | ?{$_.Name -eq $appname}).Verbs() | ?{$_.Name.replace('&','') -match 'Unpin from taskbar'} | %{$_.DoIt(); $exec = $true}
+
 }
 
 Function Set-ExplorerSettings {
@@ -26,6 +31,9 @@ Function Set-ExplorerSettings {
 
     # Show file extensions
     Set-ItemProperty -Path HKCU:\software\microsoft\windows\currentversion\explorer\advanced -Name "HideFileExt" -Type 'Dword' -Value "0" -Force
+
+    # Launch Explorer to "This PC" instead of Home / Quick Access
+    Set-ItemProperty -Path HKCU:\software\microsoft\windows\currentversion\explorer\advanced -Name "LaunchTo" -Type 'Dword' -Value "1" -Force
 
     # Restore classic context menu
     $guid = "{86CA1AA0-34AA-4E8B-A509-50C905BAE2A2}" 
