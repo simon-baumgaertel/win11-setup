@@ -10,6 +10,7 @@ if (!(Test-Win11Installation)) { Write-Warning "This script is intended for Wind
 
 # Install apps and features
 Update-WinGet
+Install-WinGetPackages
 #
 Install-WSL
 
@@ -20,3 +21,5 @@ Set-DarkTheme
 Restart-Explorer
 
 Stop-Transcript
+
+Restart-Computer -Force

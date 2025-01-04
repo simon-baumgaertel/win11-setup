@@ -29,8 +29,8 @@ Function Set-ExplorerSettings {
 
     # Restore classic context menu
     $guid = "{86CA1AA0-34AA-4E8B-A509-50C905BAE2A2}" 
-    New-Item -Path "HKCU:\Software\Classes\CLSID\" -Name $guid
-    New-Item -Path "HKCU:\Software\Classes\CLSID\$guid" -Name InprocServer32 -Value "" 
+    New-Item -Path "HKCU:\Software\Classes\CLSID\" -Name $guid | Out-Null
+    New-Item -Path "HKCU:\Software\Classes\CLSID\$guid" -Name InprocServer32 -Value "" | Out-Null 
 }
 Function Set-DarkTheme {
     Write-Output "[i] Setting dark theme for system and apps ..."
