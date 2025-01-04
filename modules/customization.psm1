@@ -14,8 +14,8 @@ Function Set-TaskbarSettings {
     # Removes Chat from the Taskbar
     Set-ItemProperty -Path HKCU:\software\microsoft\windows\currentversion\explorer\advanced -Name "TaskbarMn" -Type 'Dword' -Value "0" -Force
 
-     # Removes search from the Taskbar
-     Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search -Name "SearchboxTaskbarMode" -Type 'Dword' -Value "0" -Force
+    # Removes search from the Taskbar
+    Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search -Name "SearchboxTaskbarMode" -Type 'Dword' -Value "0" -Force
 }
 
 Function Set-ExplorerSettings {
@@ -38,4 +38,13 @@ Function Set-DarkTheme {
     # set dark theme for apps and os (0 = dark, 1 = light)
     New-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name SystemUsesLightTheme -Value 0 -Type Dword -Force | Out-Null
     New-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name AppsUseLightTheme -Value 0 -Type Dword -Force | Out-Null
+}
+
+Function Remove-Shortcuts {
+    Write-Output "[-] Removing desktops shortcuts ..."
+    $desktops = @("C:\Users\Public\Desktop", "C:\Users\$env:USERNAME\Desktop")
+    
+    foreach ($desktop in $desktops){
+        Get-ChildItem -Path $desktop -Filter "*.lnk" | Remove-Item -Force
+    }
 }

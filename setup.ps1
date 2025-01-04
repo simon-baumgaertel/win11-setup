@@ -18,6 +18,7 @@ Install-WSL
 Set-TaskbarSettings
 Set-ExplorerSettings
 Set-DarkTheme
+Remove-Shortcuts
 Restart-Explorer
 
 Stop-Transcript

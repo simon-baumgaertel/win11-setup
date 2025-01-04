@@ -1,0 +1,17 @@
+id,source
+7zip.7zip,winget
+Mozilla.Firefox,winget
+Hibbiki.Chromium,winget
+Notepad++.Notepad++,winget
+Microsoft.VisualStudioCode,winget
+KeePassXCTeam.KeePassXC,winget
+Microsoft.PowerShell,winget
+Microsoft.PowerToys,winget
+Microsoft.WindowsTerminal,winget
+Joplin.Joplin,winget
+Bruno.Bruno,winget
+Discord.Discord,winget
+Valve.Steam,winget
+PrismLauncher.PrismLauncher,winget
+Microsoft.OpenJDK.21,winget
+JetBrains.PhpStorm,winget

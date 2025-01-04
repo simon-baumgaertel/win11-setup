@@ -23,6 +23,8 @@ Feel free to explore, contribute, or adapt the scripts to your personal needs!
 
 **Applications**
 * installs the latest [Windows Package Manager (WinGet)](https://github.com/microsoft/winget-cli)
+    * installs all package ids in [winget_apps.csv](winget_apps.csv)
+        * Installs by default the applications: `7-zip, Firefox, Chromium, Notepad++, Visual Studio Code, KeePassXC, PowerShell Core, PowerToys, Windows Terminal, Joplin, Bruno, Discord, Steam, PrismLauncher, Microsoft OpenJDK and PhpStorm`
 * installs the [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/install) _(Default Linux distribution is Ubuntu)_
 
 **Customization**
@@ -36,7 +38,7 @@ Feel free to explore, contribute, or adapt the scripts to your personal needs!
     * show hidden files
     * show file extensions
     * restore classic context menu
-
+* removes shortcuts from applications on desktop
 
 ## Credits
 
