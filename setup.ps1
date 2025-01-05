@@ -1,5 +1,4 @@
 #Requires -RunAsAdministrator
-
 Start-Transcript -Path ".\Win11-Setup.log" -Force
 
 Write-Output "[i] Importing modules ..."
@@ -13,7 +12,7 @@ if (!(Test-Win11Installation)) { Write-Warning "This script is intended for Wind
 # Install apps and features
 Update-WinGet
 Install-WinGetPackages
-#
+Enable-AutoUpdates
 Install-WSL
 
 # Customizations (dark theme, file extensiosn etc.)
@@ -24,5 +23,4 @@ Remove-Shortcuts
 Restart-Explorer
 
 Stop-Transcript
-
-Restart-Computer -Force
+Restart-System
