@@ -1,5 +1,5 @@
 # WinGet
-Function Update-WinGet {
+function Update-WinGet {
     Write-Output "[+] Installing latest Windows Package Manager (WinGet)"
     Add-AppxPackage -Path "https://github.com/microsoft/winget-cli/releases/latest/download/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle" -ForceApplicationShutdown
     try {
@@ -9,7 +9,7 @@ Function Update-WinGet {
     }
 }
 
-Function Install-WinGetPackages {
+function Install-WinGetPackages {
     $packageList = ".\config\winget_apps.csv"
     if(Test-Path -Path $packageList){
         $packages = Import-Csv -Path $packageList
@@ -25,7 +25,7 @@ Function Install-WinGetPackages {
     }
 }
 
-Function Enable-AutoUpdates {
+function Enable-AutoUpdates {
     $scheduledTask = Get-ScheduledTask | Where-Object TaskName -like "WinGet Auto-updates"
     if(!($scheduledTask)){
         $trigger = New-ScheduledTaskTrigger -AtLogOn
@@ -36,12 +36,12 @@ Function Enable-AutoUpdates {
 }
 
 # WSL
-Function Install-WSL {
+function Install-WSL {
     wsl --install
 }
 
 # Bloatware
-Function Remove-Bloatware {
+function Remove-Bloatware {
     $bloatware = ".\config\bloatware_apps.csv"
     if(Test-Path -Path $bloatware){
         $apps = Import-Csv -Path $bloatware

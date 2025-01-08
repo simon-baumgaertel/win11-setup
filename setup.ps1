@@ -1,5 +1,7 @@
 #Requires -RunAsAdministrator
 Start-Transcript -Path ".\Win11-Setup.log" -Force
+Show-Welcome
+Show-WindowsVersion
 
 Write-Output "[i] Importing modules ..."
 Import-Module ".\modules\applications.psm1" -Force

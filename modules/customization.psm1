@@ -1,5 +1,5 @@
 
-Function Set-TaskbarSettings {
+function Set-TaskbarSettings {
     Write-Output "[i] Customizing Taskbar settings ..."
 
     # Default StartMenu alignment 0=Left
@@ -23,7 +23,7 @@ Function Set-TaskbarSettings {
 
 }
 
-Function Set-ExplorerSettings {
+function Set-ExplorerSettings {
     Write-Output "[i] Customizing Explorer settings ..."
     
     # Show hidden files
@@ -40,7 +40,7 @@ Function Set-ExplorerSettings {
     New-Item -Path "HKCU:\Software\Classes\CLSID\" -Name $guid | Out-Null
     New-Item -Path "HKCU:\Software\Classes\CLSID\$guid" -Name InprocServer32 -Value "" | Out-Null 
 }
-Function Set-DarkTheme {
+function Set-DarkTheme {
     Write-Output "[i] Setting dark theme for system and apps ..."
 
     # set dark theme for apps and os (0 = dark, 1 = light)
@@ -48,7 +48,7 @@ Function Set-DarkTheme {
     New-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name AppsUseLightTheme -Value 0 -Type Dword -Force | Out-Null
 }
 
-Function Remove-Shortcuts {
+function Remove-Shortcuts {
     Write-Output "[-] Removing desktops shortcuts ..."
     $desktops = @("C:\Users\Public\Desktop", "C:\Users\$env:USERNAME\Desktop")
     
