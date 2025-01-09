@@ -43,10 +43,10 @@ Feel free contribute or adapt the scripts to your personal needs!
     * show file extensions
     * launch the Explorer to "This PC"
     * restore classic context menu
+* disable lock screen tips
 * removes shortcuts from applications on desktop
 
 **💩 Bloatware**
-
 * removes common bloatware applications ([bloatware_apps.csv](config/bloatware_apps.csv))
 
 

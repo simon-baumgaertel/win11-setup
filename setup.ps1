@@ -21,6 +21,7 @@ Install-WSL
 Set-TaskbarSettings
 Set-ExplorerSettings
 Set-DarkTheme
+Disable-Tips
 Remove-Shortcuts
 Restart-Explorer
 
