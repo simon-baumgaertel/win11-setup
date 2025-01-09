@@ -1,12 +1,10 @@
 #Requires -RunAsAdministrator
-Start-Transcript -Path ".\Win11-Setup.log" -Force
-Show-Welcome
-Show-WindowsVersion
-
-Write-Output "[i] Importing modules ..."
 Import-Module ".\modules\applications.psm1" -Force
 Import-Module ".\modules\basics.psm1" -Force
 Import-Module ".\modules\customization.psm1" -Force
+Start-Transcript -Path ".\Win11-Setup.log" -Force
+Show-Welcome
+Show-WindowsVersion
 
 # Check for Windows 11
 if (!(Test-Win11Installation)) { Write-Warning "This script is intended for Windows 11."; exit}
