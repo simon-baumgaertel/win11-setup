@@ -56,3 +56,8 @@ function Remove-Bloatware {
         }
     }
 }
+
+function Uninstall-OneDrive {
+    $OneDriveSetup = "$env:SystemRoot\System32\OneDriveSetup.exe"
+    Start-Process -FilePath $OneDriveSetup -ArgumentList "/uninstall"
+}

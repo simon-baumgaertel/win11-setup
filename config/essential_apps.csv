@@ -1,0 +1,11 @@
+id,source
+7zip.7zip,winget
+Hibbiki.Chromium,winget
+Mozilla.Firefox,winget
+KeePassXCTeam.KeePassXC,winget
+Microsoft.PowerShell,winget
+Microsoft.PowerToys,winget
+Microsoft.VisualStudioCode,winget
+Microsoft.WindowsTerminal,winget
+JanDeDobbeleer.OhMyPosh,winget
+Notepad++.Notepad++,winget

@@ -38,7 +38,7 @@ function Set-ExplorerSettings {
     Set-ItemProperty -Path HKCU:\software\microsoft\windows\currentversion\explorer\advanced -Name "LaunchTo" -Type "DWORD" -Value "1" -Force
 
     # Remove OneDrive from Explorer
-    Set-ItemProperty -Path "HKEY_CLASSES_ROOT\CLSID\{018D5C66-4533-4307-9B53-224DE2ED1FE6}" -Name "System.IsPinnedToNameSpaceTree" -Type "DWORD" -Value 1 -Force
+    #Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "HideOneDrive" -Value 1 -Force
 
     # Restore classic context menu
     $guid = "{86CA1AA0-34AA-4E8B-A509-50C905BAE2A2}" 
