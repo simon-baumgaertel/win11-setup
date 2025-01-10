@@ -10,7 +10,7 @@ function Update-WinGet {
 }
 
 function Install-WinGetPackages {
-    $packageList = ".\config\winget_apps.csv"
+    $packageList = ".\config\essential_apps.csv"
     if(Test-Path -Path $packageList){
         $packages = Import-Csv -Path $packageList
         Write-Output "[+] Installing $($packages.count) packages"
@@ -38,26 +38,4 @@ function Enable-AutoUpdates {
 # WSL
 function Install-WSL {
     wsl --install
-}
-
-# Bloatware
-function Remove-Bloatware {
-    $bloatware = ".\config\bloatware_apps.csv"
-    if(Test-Path -Path $bloatware){
-        $apps = Import-Csv -Path $bloatware
-        Write-Output "[-] Removing $($apps.count) bloatware apps"
-
-        foreach ($app in $apps) {
-            try {
-                Get-AppxPackage -AllUsers $app.id | Remove-AppxPackage -AllUsers -Verbose -ErrorAction Continue
-            } catch {
-                Write-Output "[?] An error occured while removing $app.id"
-            }
-        }
-    }
-}
-
-function Uninstall-OneDrive {
-    $OneDriveSetup = "$env:SystemRoot\System32\OneDriveSetup.exe"
-    Start-Process -FilePath $OneDriveSetup -ArgumentList "/uninstall"
 }

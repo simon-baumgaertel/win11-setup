@@ -1,10 +1,11 @@
 function Install-Font {
     Write-Output "[+] Installing JetBrains Mono Font via oh-my-posh ..."
-    if(Get-Command "oh-my-posh.exe"){
+    $ohMyPosh = "$env:LOCALAPPDATA\Programs\oh-my-posh\bin\oh-my-posh.exe"
+    if(Get-Command $ohMyPosh -ErrorAction SilentlyContinue){
         try{
-            Start-Process -FilePath "oh-my-posh.exe" -ArgumentList "font install JetBrainsMono" -Wait -NoNewWindow
+            Start-Process -FilePath $ohMyPosh -ArgumentList "font install JetBrainsMono" -Wait -NoNewWindow
         }catch{
-    
+            Write-Output "[?] oh-my-posh was not found :("
         }
     }else{
         Write-Output "[?] oh-my-posh was not found :("
@@ -29,6 +30,11 @@ function Set-Font{
     }
     
     # Visual Studio Code
+    <#
+    # Visual Studio Code needs to be launched to create $env:APPDATA\Code
+    # also settings.json needs to be created apparently
+
+
     $vsCodeConfig = "$env:APPDATA\Code\User\settings.json"
     if(Test-Path -Path $vsCodeConfig){
         $json = Get-Content -Path  $vsCodeConfig -Raw | ConvertFrom-Json
@@ -43,4 +49,5 @@ function Set-Font{
 
         Write-Output "[+] Set JetBrainsMono Nerd Font for Visual Studio Code"
     }
+    #>
 }

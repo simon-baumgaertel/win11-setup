@@ -7,9 +7,6 @@ function Set-TaskbarSettings {
     # Removes Task View from the Taskbar
     Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name "ShowTaskViewButton" -Type "DWORD" -Value "0" -Force
     
-    # Removes Widgets from the Taskbar
-    Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name "TaskbarDa" -Type "DWORD" -Value "0" -Force
-    
     # Removes Chat from the Taskbar
     Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name "TaskbarMn" -Type "DWORD" -Value "0" -Force
 

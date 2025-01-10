@@ -1,8 +1,11 @@
 #Requires -RunAsAdministrator
-Import-Module ".\modules\applications.psm1" -Force
 Import-Module ".\modules\basics.psm1" -Force
+Import-Module ".\modules\applications.psm1" -Force
 Import-Module ".\modules\customization.psm1" -Force
 Import-Module ".\modules\dev.psm1" -Force
+Import-Module ".\modules\telemetry.psm1" -Force
+
+# Start
 Start-Transcript -Path ".\Win11-Setup.log" -Force
 Show-Welcome
 Show-WindowsVersion
@@ -16,6 +19,10 @@ Install-WinGetPackages
 Enable-AutoUpdates
 Install-WSL
 
+# Telemetry & Bloatware
+Remove-Bloatware
+Uninstall-OneDrive
+
 # Customizations (dark theme, file extensiosn etc.)
 Set-TaskbarSettings
 Set-ExplorerSettings
@@ -23,10 +30,6 @@ Set-DarkTheme
 Disable-Tips
 Remove-Shortcuts
 Restart-Explorer
-
-# Telemetry & Bloatware
-Remove-Bloatware
-Uninstall-OneDrive
 
 # Dev
 Install-Font
