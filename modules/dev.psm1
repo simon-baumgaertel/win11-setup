@@ -56,3 +56,14 @@ function Set-Font{
     #>
     
 }
+
+function Set-POSHPrompt {
+    $promptString = 'oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/unicorn.omp.json" | Invoke-Expression'
+
+    if(-Not(Get-Path -Path $PROFILE)){
+        New-Item -Path $PROFILE -Type File -Force
+    }
+
+    Add-Content -Path $PROFILE -Value $promptString
+    . $PROFILE
+}

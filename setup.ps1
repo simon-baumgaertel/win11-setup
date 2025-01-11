@@ -33,6 +33,7 @@ Restart-Explorer
 # Dev
 Install-Font
 Set-Font
+Set-POSHPrompt
 
 Stop-Transcript
 Restart-System

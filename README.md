@@ -39,6 +39,16 @@ Feel free contribute or adapt the scripts to your personal needs!
     * enables <ins>auto-updates</ins> on system startup for WinGet packages
 * installs the [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/install) _(Default Linux distribution is Ubuntu)_
 
+**💩 Bloatware**
+* removes common bloatware applications ([bloatware_apps.csv](config/bloatware_apps.csv))
+
+**🧱 Telemetry**
+* disables basic telemetry
+* disables AI Recall
+* disables Copilot
+* disables Spotlight, Tips and Suggestions
+* disables automatic app installs
+
 **🛠️ Customization**
 * sets taskbar settings
     * Start menu alignment to left
@@ -53,17 +63,10 @@ Feel free contribute or adapt the scripts to your personal needs!
     * restore classic context menu
 * disable lock screen tips
 * removes shortcuts from applications on desktop
-
-**💩 Bloatware**
-* removes common bloatware applications ([bloatware_apps.csv](config/bloatware_apps.csv))
-
-
-**🧱 Telemetry**
-* disables basic telemetry
-* disables AI Recall
-* disables Copilot
-* disables Spotlight, Tips and Suggestions
-* disables automatic app installs
+* <ins>Oh my Posh</ins>
+    * install `JetBrains Mono` font
+        * set as default font for Windows Terminal
+        * change PowerShell prompt & sets the [unicorn](https://ohmyposh.dev/docs/themes#unicorn) theme
 
 ## Credits
 
