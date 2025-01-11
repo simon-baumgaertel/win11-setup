@@ -30,10 +30,14 @@ function Set-Font{
     }
     
     # Visual Studio Code
+    
     <#
     # Visual Studio Code needs to be launched to create $env:APPDATA\Code
     # also settings.json needs to be created apparently
+    if(-Not(Test-Path -Path "$env:APPDATA\Code\User")){
 
+        
+    }
 
     $vsCodeConfig = "$env:APPDATA\Code\User\settings.json"
     if(Test-Path -Path $vsCodeConfig){
@@ -50,4 +54,5 @@ function Set-Font{
         Write-Output "[+] Set JetBrainsMono Nerd Font for Visual Studio Code"
     }
     #>
+    
 }

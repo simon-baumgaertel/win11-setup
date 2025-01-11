@@ -24,10 +24,8 @@ Remove-Bloatware
 Uninstall-OneDrive
 
 # Customizations (dark theme, file extensiosn etc.)
-Set-TaskbarSettings
-Set-ExplorerSettings
+Edit-TaskbarExplorer
 Set-DarkTheme
-Disable-Tips
 Remove-Shortcuts
 Restart-Explorer
 

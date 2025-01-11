@@ -25,8 +25,17 @@ Feel free contribute or adapt the scripts to your personal needs!
 
 **⚙️ Applications**
 * installs the latest [Windows Package Manager (WinGet)](https://github.com/microsoft/winget-cli)
-    * installs all package ids in [winget_apps.csv](config/winget_apps.csv)
-        * Installs by default the applications: `7zip,Bruno,Chromium,Discord,Firefox,Joplin,KeePassXC,OhMyPosh,OpenJDK,PhpStorm,PowerShell,PowerToys,PrismLauncher,Steam,VisualStudioCode,WindowsTerminal`
+    * installs some esential packages [essential_apps.csv](config/essential_apps.csv)
+        * 7zip
+        * Chromium
+        * Firefox
+        * KeePassXC
+        * PowerShell
+        * PowerToys
+        * VisualStudioCode
+        * WindowsTerminal
+        * OhMyPosh
+        * Notepad++
     * enables <ins>auto-updates</ins> on system startup for WinGet packages
 * installs the [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/install) _(Default Linux distribution is Ubuntu)_
 
@@ -37,7 +46,6 @@ Feel free contribute or adapt the scripts to your personal needs!
     * removes Widgets from the Taskbar
     * removes Chat from the Taskbar
     * removes search from the Taskbar
-    * unpins the Microsoft Store
 * sets explorer settings
     * show hidden files
     * show file extensions
@@ -51,7 +59,11 @@ Feel free contribute or adapt the scripts to your personal needs!
 
 
 **🧱 Telemetry**
-* tbd
+* disables basic telemetry
+* disables AI Recall
+* disables Copilot
+* disables Spotlight, Tips and Suggestions
+* disables automatic app installs
 
 ## Credits
 
