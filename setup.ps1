@@ -22,6 +22,7 @@ Install-WSL
 # Telemetry & Bloatware
 Remove-Bloatware
 Uninstall-OneDrive
+Disable-Telemetry
 
 # Customizations (dark theme, file extensiosn etc.)
 Edit-TaskbarExplorer
