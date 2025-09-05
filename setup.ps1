@@ -11,7 +11,7 @@ Show-Welcome
 Show-WindowsVersion
 
 # Check for Windows 11
-if (!(Test-Win11Installation)){ Write-Warning "This script is intended for Windows 11."; exit }
+if (!(Test-Win11Installation)) { Write-Warning "This script is intended for Windows 11."; exit }
 
 # Install apps and features
 Update-WinGet
@@ -28,6 +28,7 @@ Disable-Telemetry
 Edit-TaskbarExplorer
 Set-DarkTheme
 Remove-Shortcuts
+Set-PowerPlan
 Restart-Explorer
 
 # Dev

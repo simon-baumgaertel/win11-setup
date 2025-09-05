@@ -1,14 +1,16 @@
 # Bloatware
 function Remove-Bloatware {
     $bloatware = ".\config\bloatware_apps.csv"
-    if(Test-Path -Path $bloatware){
+    if (Test-Path -Path $bloatware) {
         $apps = Import-Csv -Path $bloatware
-        Write-Output "[-] Removing $($apps.count) bloatware apps"
+        Write-Output "[i] Removing $($apps.count) bloatware apps"
 
         foreach ($app in $apps) {
             try {
+                Write-Output "[-] Removing $($app.id)"
                 Get-AppxPackage -AllUsers $app.id | Remove-AppxPackage -AllUsers -Verbose -ErrorAction Continue
-            } catch {
+            }
+            catch {
                 Write-Output "[?] An error occured while removing $app.id"
             }
         }
@@ -26,7 +28,8 @@ function Disable-Telemetry {
     $regFile = ".\registry_files\Disable_AIRecall.reg"
     try {
         Start-Process regedit.exe -ArgumentList "/s", $regFile -Wait -ErrorAction SilentlyContinue
-    } catch {
+    }
+    catch {
         Write-Output "Failed to apply $regFile. Error: $_"
     }
 
@@ -34,7 +37,8 @@ function Disable-Telemetry {
     $regFile = ".\registry_files\Disable_Copilot.reg"
     try {
         Start-Process regedit.exe -ArgumentList "/s", $regFile -Wait -ErrorAction SilentlyContinue
-    } catch {
+    }
+    catch {
         Write-Output "Failed to apply $regFile. Error: $_"
     }
 
@@ -42,7 +46,8 @@ function Disable-Telemetry {
     $regFile = ".\registry_files\Disable_Spotlight_Tips.reg"
     try {
         Start-Process regedit.exe -ArgumentList "/s", $regFile -Wait -ErrorAction SilentlyContinue
-    } catch {
+    }
+    catch {
         Write-Output "Failed to apply $regFile. Error: $_"
     }
 
@@ -50,7 +55,8 @@ function Disable-Telemetry {
     $regFile = ".\registry_files\Disable_Windows_Suggestions.reg"
     try {
         Start-Process regedit.exe -ArgumentList "/s", $regFile -Wait -ErrorAction SilentlyContinue
-    } catch {
+    }
+    catch {
         Write-Output "Failed to apply $regFile. Error: $_"
     }
 
@@ -58,7 +64,8 @@ function Disable-Telemetry {
     $regFile = ".\registry_files\Disable_Telemetry.reg"
     try {
         Start-Process regedit.exe -ArgumentList "/s", $regFile -Wait -ErrorAction SilentlyContinue
-    } catch {
+    }
+    catch {
         Write-Output "Failed to apply $regFile. Error: $_"
     }
 }
