@@ -1,30 +1,25 @@
-function Edit-TaskbarExplorer {
-    Write-Output "[i] Customizing Taskbar settings ..."
-    $regFile = ".\registry_files\Customize_Explorer_Taskbar.reg"
-    try {
-        Start-Process regedit.exe -ArgumentList "/s", $regFile -Wait -ErrorAction SilentlyContinue
-    }
-    catch {
-        Write-Output "Failed to apply $regFile. Error: $_"
+function Set-ExplorerAndTaskbar {
+
+    $regFiles = @(
+        "Customize_Explorer_Taskbar.reg"
+        "Disable_Widgets_Taskbar.reg"
+        "Disable_Bing_Cortana_Search.reg"
+        "Set_ContextMenu.reg"
+    )
+
+    foreach ($regFile in $regFiles) {
+
+        Write-Output "[i] Applying $regFile ..."
+        $regFilePath = ".\registry_files\$regFile"
+        try {
+            Start-Process regedit.exe -ArgumentList "/s", $regFilePath -Wait -ErrorAction SilentlyContinue
+        }
+        catch {
+            Write-Output "Failed to apply $regFile. Error: $_"
+        }
+
     }
 
-    Write-Output "[-] Removing Widgets ..."
-    $regFile = ".\registry_files\Disable_Widgets_Taskbar.reg"
-    try {
-        Start-Process regedit.exe -ArgumentList "/s", $regFile -Wait -ErrorAction SilentlyContinue
-    }
-    catch {
-        Write-Output "Failed to apply $regFile. Error: $_"
-    }
-
-    Write-Output "[-] Disbaling Bing and Cortana Search ..."
-    $regFile = ".\registry_files\Disable_Bing_Cortana_Search.reg"
-    try {
-        Start-Process regedit.exe -ArgumentList "/s", $regFile -Wait -ErrorAction SilentlyContinue
-    }
-    catch {
-        Write-Output "Failed to apply $regFile. Error: $_"
-    }
 }
 
 function Set-DarkTheme {

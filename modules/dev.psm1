@@ -34,12 +34,20 @@ function Set-Font {
 }
 
 function Set-POSHPrompt {
-    $promptString = 'oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/unicorn.omp.json" | Invoke-Expression'
+    # "C:\Users\<user>\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1"
+    # "C:\Users\<user>\Documents\PowerShell\Microsoft.PowerShell_profile.ps1"
+    # "C:\Users\<user>\Documents\PowerShell\Microsoft.VSCode_profile.ps1"
+    $themePath = "$env:POSH_THEMES_PATH\tonybaloney.omp.json"
+    $profileLine = "oh-my-posh init pwsh --config `"$themePath`" | Invoke-Expression"
 
-    if (-Not(Test-Path -Path $PROFILE)) {
+    if (-not (Test-Path -Path $PROFILE)) {
         New-Item -Path $PROFILE -Type File -Force
     }
 
-    Add-Content -Path $PROFILE -Value $promptString
+    # Prevent duplicate lines
+    if (-not (Get-Content $PROFILE | Select-String -Pattern 'oh-my-posh init pwsh')) {
+        Add-Content -Path $PROFILE -Value $profileLine
+    }
+
     . $PROFILE
 }

@@ -1,8 +1,5 @@
 # win11-setup
 
-> [!NOTE]
-> 🚧 This repo is a work in progress!
-
 This repository contains a collection of personal scripts designed to streamline the setup process for Windows 11. 
 The scripts automate various tasks such as system configuration, software installations and optimizations to enhance my Windows experience.
 
@@ -26,16 +23,6 @@ Feel free contribute or adapt the scripts to your personal needs!
 **⚙️ Applications**
 * installs the latest [Windows Package Manager (WinGet)](https://github.com/microsoft/winget-cli)
     * installs some esential packages [essential_apps.csv](config/essential_apps.csv)
-        * 7zip
-        * Chromium
-        * Firefox
-        * KeePassXC
-        * PowerShell
-        * PowerToys
-        * VisualStudioCode
-        * WindowsTerminal
-        * OhMyPosh
-        * Notepad++
     * enables <ins>auto-updates</ins> on system startup for WinGet packages
 * installs the [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/install) _(Default Linux distribution is Ubuntu)_
 
@@ -51,11 +38,11 @@ Feel free contribute or adapt the scripts to your personal needs!
 
 **🛠️ Customization**
 * sets taskbar settings
-    * Start menu alignment to left
+    * Start Menu alignment to left
     * removes Task View from the Taskbar
     * removes Widgets from the Taskbar
     * removes Chat from the Taskbar
-    * removes search from the Taskbar
+    * removes Search from the Taskbar
 * sets explorer settings
     * show hidden files
     * show file extensions
@@ -66,7 +53,7 @@ Feel free contribute or adapt the scripts to your personal needs!
 * <ins>Oh my Posh</ins>
     * install `JetBrains Mono` font
         * set as default font for Windows Terminal
-        * change PowerShell prompt & sets the [unicorn](https://ohmyposh.dev/docs/themes#unicorn) theme
+        * change PowerShell prompt & sets the [tonybaloney](https://ohmyposh.dev/docs/themes#tonybaloney) theme
 
 ## Credits
 

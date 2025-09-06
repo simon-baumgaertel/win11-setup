@@ -25,7 +25,7 @@ Uninstall-OneDrive
 Disable-Telemetry
 
 # Customizations (dark theme, file extensiosn etc.)
-Edit-TaskbarExplorer
+Set-ExplorerAndTaskbar
 Set-DarkTheme
 Remove-Shortcuts
 Set-PowerPlan
